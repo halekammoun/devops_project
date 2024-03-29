@@ -9,4 +9,4 @@ RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/spin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80 22
+EXPOSE 80
