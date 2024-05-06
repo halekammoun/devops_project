@@ -1,13 +1,10 @@
 FROM centos:stream8
 MAINTAINER halakammoun2001@gmail.com
 RUN yum install -y httpd zip unzip
-
-# Assuming photogenic.zip is in the same directory as the Dockerfile
-COPY photogenic.zip /var/www/html/
-
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip photogenic.zip
-
-# No need for cp or rm commands as everything is copied at once
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]  # Updated httpd command
+RUN cp -rvf photogenic/* .
+RUN rm -rf photogenic photogenic.zip
+CMD ["/usr/spin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
