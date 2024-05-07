@@ -1,0 +1,21 @@
+kind: Deployment 
+apiVersion: apps/v1
+metadata: 
+    name: halekammoun
+spec: 
+    replicas: 2
+    selector:
+      matchLabels:
+        app: halekammoun
+      template:
+        metadata:
+          labels:
+            app: halekammoun
+        spec:
+          containers:
+          - name: halekammoun
+            image: halakammoun/our_first_pipeline
+            imagePullPolicy: always
+            ports:
+            containerPort: 80
+            
