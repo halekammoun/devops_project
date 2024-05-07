@@ -15,6 +15,6 @@ spec:
       containers:
       - name: halekammoun
         image: halakammoun/our_first_pipeline
-        imagePullPolicy: always
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
