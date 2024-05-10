@@ -8,7 +8,7 @@ spec:
   ports:
     - port: 8080
       targetPort: 80
-      nodePort: 31200
+      nodePort: 8080
   selector:
     app: halekammoun
   type: LoadBalancer 
