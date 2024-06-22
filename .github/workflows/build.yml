@@ -1,24 +1,20 @@
-name: Build and Analyze with SonarCloud
-
+name: Build
 on:
   push:
     branches:
       - master
   pull_request:
     types: [opened, synchronize, reopened]
-
 jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Désactiver les clonages superficiels pour une meilleure pertinence de l'analyse
-
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Nécessaire pour obtenir des informations sur les PR, le cas échéant
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Assurez-vous que SONAR_TOKEN est bien défini
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
