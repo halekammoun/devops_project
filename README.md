@@ -6,9 +6,9 @@ Ce projet contient un rapport PDF que vous pouvez consulter en cliquant sur le l
 
 ainsi, vous trouverez ici la présntation
 
-[Demo](demo.mp4)
+[Presentation](devops.pptx)
 
 Et, la démenstration vidéo
 
-[Presentation](devops.pptx)
+[Demo](demo.mp4)
 
